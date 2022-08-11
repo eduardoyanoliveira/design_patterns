@@ -18,6 +18,10 @@ class Foe:
 
 class Spell(ABC):
     
+    """A atack that is used in a Foe. 
+    It can be stronger or weaker depends on the type of spell and the type of Foe
+    """
+    
     def __init__(self, power: int) -> None:
         self.power = power
     
@@ -27,6 +31,9 @@ class Spell(ABC):
 
 
 class Striker(Spell):
+    
+    """A physical spell
+    """
     
     def __init__(self) -> None:
         super().__init__(70)
@@ -40,6 +47,9 @@ class Striker(Spell):
                  
 
 class Flames(Spell):
+    
+    """An Elemental spell
+    """
     
     def __init__(self) -> None:
         super().__init__(40)
@@ -72,6 +82,8 @@ class SpellFactory:
         
         assert 0, 'Error'
 
+# The program creates two types of Foe and randomly creates a spell, then randomly pick a Foe as well to be atacked
+# After the atack the program prints the two foes with their current health points 
 if __name__ == '__main__':
     
     from random import choice
