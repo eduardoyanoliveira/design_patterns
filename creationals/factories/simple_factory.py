@@ -78,9 +78,7 @@ if __name__ == '__main__':
     physical_foe = Foe(name='Orc', health=700, is_elemental=False)
     elemental_foe = Foe(name='Dark elf' ,health=300, is_elemental=True)
     
-    spells = [Spells.Flames, Spells.Striker]
- 
-    spell = SpellFactory.get_spell(choice(spells))
+    spell = SpellFactory.get_spell(choice([s for s in Spells]))
     spell.cast(choice([physical_foe, elemental_foe]))
     
     print(physical_foe)
