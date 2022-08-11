@@ -63,13 +63,14 @@ class SpellFactory:
     
     @staticmethod
     def get_spell(spell_type: Spells) -> Spell:
-        
-        if('striker'):
+
+        if(spell_type == Spells.Striker):
             return Striker()
         
-        if('flames'):
+        if(spell_type == Spells.Flames):
             return Flames()
-            
+        
+        assert 0, 'Error'
 
 if __name__ == '__main__':
     
