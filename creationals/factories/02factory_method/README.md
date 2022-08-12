@@ -5,7 +5,7 @@
 ### Prerequisites:
 
 1. Understanding of Simple Factory.
-[Learn about](https://github.com/eduardoyanoliveira/design_patterns/tree/master/creationals/factories/simple_factory)
+[Learn about](https://github.com/eduardoyanoliveira/design_patterns/blob/master/creationals/factories/01simple_factory/README.md)
 
 ## Introduction
 
