@@ -1,6 +1,6 @@
 # Simple Factory
 
-### type: Creational
+### Type: Creational
 
 ### Disclaimer:
 
