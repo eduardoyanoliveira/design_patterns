@@ -47,14 +47,14 @@ class ProgressiveValueDiscount(Discount):
         factor = (product_qty / base) / 10
         
         # only calculates the percentage of the value if the factor is greater than zero
-        if(factor <= 0):
+        if factor <= 0:
             return price
         
         # discount is equal the amount of discount plus a percentage if the product_qty is greater or equal to 10
         discount = ( amount + (amount * factor) )
         
         # limits the max amount of discount to be half of the product price
-        if( discount > (price / 2)):
+        if discount > (price / 2):
             discount = (price / 2)
         
         # applies the discount
@@ -134,7 +134,7 @@ if __name__ == '__main__':
     
     country = input('Where are you from? (a) USA, (b) Brazil: ')
     
-    if(country != 'a' and country != 'b'):
+    if country != 'a' and country != 'b':
         raise ValueError('Please enter a valid country')
     
     factory = factories[country]()
