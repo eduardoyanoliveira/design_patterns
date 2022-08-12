@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Factory Method is a disegn pattern listed on the GOF Design Pattern book. The base to create a factory method is using
+Factory Method is a design pattern listed on the GOF Design Pattern book. The base to create a factory method is using
 a simple factory.The biggest diference is that when using a factory method, the factory class is abstract, providing a new abstraction layer that allows the creation of different factories on different use cases.
 Notice that here there are an abstract factory and concrete factories.
 
