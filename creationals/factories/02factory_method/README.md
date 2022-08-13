@@ -4,8 +4,8 @@
 
 ### Prerequisites:
 
-1. Understanding of Simple Factory.
-[Learn about](https://github.com/eduardoyanoliveira/design_patterns/blob/master/creationals/factories/01simple_factory/README.md)
+1. Understanding of Simple Factory. \
+[Learn about Simple Factory](https://github.com/eduardoyanoliveira/design_patterns/blob/master/creationals/factories/01simple_factory/README.md)
 
 ## Introduction
 
@@ -48,7 +48,7 @@ There is only a small problem here. By the company policies eachcountry has a ce
 
 5. Creates two different implementations of the factory class, one with the Brazilian discount types and another for the american ones.  
 
-### The Program
+#### The Program
 
 1. Asks the customer where is he(she) from.
 2. Depending on the customer location creates a new factory (Either Brazilian or American)
@@ -57,6 +57,6 @@ There is only a small problem here. By the company policies eachcountry has a ce
 
 ### Notes:
 
-    * Using the factory method, if necessary adding a new discount type for a subsidiary, it's only necessary to add it to the subsidiary's concrete factory class.
+* Using the factory method, if necessary adding a new discount type for a subsidiary, it's only necessary to add it to the subsidiary's concrete factory class.
 
-    * If a new subsidiary is created in another country is only necessary to create a new concrete factory class to handle this subsidiary's discount types.
+* If a new subsidiary is created in another country is only necessary to create a new concrete factory class to handle this subsidiary's discount types.
