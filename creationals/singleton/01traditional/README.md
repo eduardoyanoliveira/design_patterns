@@ -1,4 +1,4 @@
-# Abstract Factory
+# Singleton
 
 ### Type: Creational
 
