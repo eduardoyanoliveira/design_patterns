@@ -49,7 +49,7 @@ class GunBuilder(Gun):
 
 if __name__ == '__main__':
     ak = GunBuilder('Ak-74').with_scope().with_silincer().build()
-    glock = GunBuilder('Glock').with_infrared_sight()
+    glock = GunBuilder('Glock').with_infrared_sight().build()
     
     print(ak)
     print(glock)
