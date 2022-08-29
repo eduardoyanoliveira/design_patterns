@@ -1,15 +1,16 @@
 from dataclasses import dataclass
+from typing import Optional
 
 
 @dataclass
 class Gun:
     
     brand: str
-    elongated_clip: bool = False
-    scope: bool = False
-    elongated_stock: bool = False
-    silincer: bool = False
-    infrared_sight: bool = False
+    elongated_clip: Optional[bool] = None
+    scope: Optional[bool] = None
+    elongated_stock: Optional[bool] = None
+    silincer: Optional[bool] = None
+    infrared_sight: Optional[bool] = None
     
 
 @dataclass
