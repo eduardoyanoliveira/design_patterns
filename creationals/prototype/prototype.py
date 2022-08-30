@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 @dataclass
-class Worker:
+class Employee:
     
     name: str
     register_date: datetime
@@ -18,7 +18,7 @@ class Worker:
     def payment(self) -> float:
         return self.hour_salary * 8 * self.working_days + self.month_bonus 
     
-    def clone(self) -> Worker:
+    def clone(self) -> Employee:
         return deepcopy(self)
     
     def __str__(self) -> str:
@@ -36,7 +36,7 @@ class Role:
 if __name__ == '__main__':
     
     adm = Role('Administrative Assistant')
-    assistant = Worker('worker', register_date=datetime.now(), hour_salary=7, working_days=21, role=adm, month_bonus=400)
+    assistant = Employee('worker', register_date=datetime.now(), hour_salary=7, working_days=21, role=adm, month_bonus=400)
     
     john = assistant.clone()
     john.name = 'John'
