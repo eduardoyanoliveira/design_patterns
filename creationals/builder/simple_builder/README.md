@@ -23,22 +23,22 @@ The program is a FPS game that let the player craft guns combining diferent part
 
 #### Builder Class
 
-2. Create a dataclass that will be the gun's builder class.
+2. Create a dataclass that will be the gun's "Builder Class".
 
 #### Chaining Methods
 
-3. For each part that can be added to the gun, creates a method that will add it to the builder class instance. 
+3. For each part that can be added to the gun, creates a method that will add it to the "Builder Class" instance. 
 (In this case I'm only passing "true" to the parts that together creates the gun). Return the instance (self)
 
 #### Build Method
 
-4. Create a build method that instatiate a new Gun passing the Builder class instance attributes as the parameters to create it. Return the gun instance.
+4. Create a build method that instatiate a new Gun passing the "Builder Class" instance attributes as the parameters to create it. Return the gun instance.
 
 
 #### The Program
 
-1. Creates a Ak-74 with scope and silincer using the Builder class and stores it on a variable 
-2. Creates a Glock with infrared sight using the Builder class and stores it on a variable
+1. Creates a Ak-74 with scope and silincer using the "Builder Class" and stores it on a variable 
+2. Creates a Glock with infrared sight using the "Builder Class" and stores it on a variable
 3. Prints both variables on console.
 
 
