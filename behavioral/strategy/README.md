@@ -13,7 +13,7 @@ The strategy pattern (also known as the policy pattern) is a behavioral software
 
 2. Follows the principle that code must not be based on implementations, but interfaces.
 
-3. Helps on use Open closed Principle.
+3. Helps on using Open closed Principle.
 
 4. Uses Dependency injection, providing less code coupling. 
 
