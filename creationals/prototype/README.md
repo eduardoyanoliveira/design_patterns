@@ -10,7 +10,7 @@ The Prototype is a design pattern listed on the GOF book, like it's name says, i
 
 ### Introduction
 
-The program is a Employee register that provides a class role and a class employee, every employee must have a role and more attributes. 
+The program is an Employee register that provides a class role and a class employee, every employee must have a role and more attributes. 
 
 #### Role Class
 
