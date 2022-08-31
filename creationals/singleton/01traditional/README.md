@@ -22,6 +22,12 @@ to be created.
 
 1. On the singleton class create a class varible will be responsible store the instance and if an instance is already stored on this varible the class can not allow another one to be created. 
 
+```
+class DatabaseConfig:
+    
+    _instance = None
+    
+```
 
 #### Def __new__
 
