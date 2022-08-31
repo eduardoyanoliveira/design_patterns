@@ -88,25 +88,7 @@ class GunBuilder(Gun):
 @dataclass
 class GunBuilder(Gun):
     
-    def with_elongated_clip(self) -> None:
-        self.elongated_clip = True
-        return self
-    
-    def with_scope(self) -> None:
-        self.scope = True
-        return self
-
-    def with_elongated_stock(self) -> None:
-        self.elongated_stock = True
-        return self
-    
-    def with_silincer(self) -> None:
-        self.silincer = True
-        return self
-
-    def with_infrared_sight(self) -> None:
-        self.infrared_sight = True
-        return self
+    ...
     
     def build(self) -> Gun:
         return Gun(
