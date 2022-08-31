@@ -14,8 +14,17 @@ The program is an Employee register that provides a class role and a class emplo
 
 #### Role Class
 
-1. Create a class Role with the attribute name
+1. Create a class Role with the attribute name.
 
+```
+@dataclass 
+class Role:
+    name : str
+    
+    def __str__(self) -> str:
+        return self.name
+
+```
 #### Employee Class
 
 2. Create a class Employee with that will recive a Role instance as it's attribute role and the following attributes:
@@ -26,16 +35,64 @@ The program is an Employee register that provides a class role and a class emplo
 *  role: Role
 *  month_bonus: float
 
+```
+@dataclass
+class Employee:
+    
+    name: str
+    register_date: datetime
+    hour_salary: float
+    working_days: int
+    role: Role
+    month_bonus: float
+    
+    @property
+    def payment(self) -> float:
+        return self.hour_salary * 8 * self.working_days + self.month_bonus 
+    
+
+    def __str__(self) -> str:
+        return f'{self.name} is a {self.role}, he/she worked {self.working_days} days and will earn {self.payment} this month'
+
+```
+
 #### The Clone method
 
 3. To implement the prototype pattern it's need to create a clone method on the product class "Employee".The clone method must clone the instance "self" and return the clone.
 
+@dataclass
+class Employee:
+    
+    ...
+
+    def clone(self) -> Employee:
+        return deepcopy(self)
+    
+
+```
 
 #### The Program
 
 1. Creates a prototype for all the employees that work on the administrative office.
 2. Clones the prototype to craete an actually employee "john" and changes the attribute "name" to "John".
 3. Does the exactly same thing to another employee that works on the office "Mary".
+
+```
+if __name__ == '__main__':
+    
+    adm = Role('Administrative Assistant')
+    assistant = Employee('worker', register_date=datetime.now(), hour_salary=7, working_days=21, role=adm, month_bonus=400)
+    
+    john = assistant.clone()
+    john.name = 'John'
+    
+    mary = assistant.clone()
+    mary.name = 'Mary'
+    
+    print(john)
+    print(mary)
+
+```
 
 ##### Notes:
 
