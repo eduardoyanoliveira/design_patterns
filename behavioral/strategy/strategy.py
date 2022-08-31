@@ -3,8 +3,6 @@ from concrete_classes import ArmsDefenseStrategy, EmptyHandedAttackStrategy, Shi
 
 from interfaces import IAttackStrategy, IDefenseStrategy
 
-
-
 # Client
 
 @dataclass
