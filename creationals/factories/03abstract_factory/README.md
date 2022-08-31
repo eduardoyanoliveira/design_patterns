@@ -33,18 +33,124 @@ After hours of thinking about the problem you decide to ask a collegue,she says 
 1. Transform the current factory class into an abstract factory class which will hava an abstract method to get each UI component. \
     e.g: get_confirm_button, get_delete_button, etc.  
 
+```
+from abstract_product_classes import UiButton, UiInput
+
+# Abstract Factory
+
+class AbstractFormFactory(ABC):
+    
+    @staticmethod
+    @abstractmethod
+    def get_confirm_button() -> UiButton:
+        raise NotImplementedError
+    
+    @staticmethod
+    @abstractmethod
+    def get_delete_button() -> UiButton:
+        raise NotImplementedError
+    
+    
+    @staticmethod
+    @abstractmethod
+    def get_text_input() -> UiInput:
+        raise NotImplementedError
+    
+    @staticmethod
+    @abstractmethod
+    def get_number_input() -> UiInput:
+        raise NotImplementedError
+```
 
 #### Concrete Factory Classes
 
 2. Creates an implemantation of the abstract factory class for each Windows and Mac. Each of the factory will return the right implementation of the abstract product class.\
     e.g: If the get_confirm_button from the Windows Factory is called, it returns a Windows Confirm Button.
 
+```
+from concrete_product_classes import (
+    WindowsConfirmButton,
+    WindowsDeleteButton,
+    WindowsNumberInput,
+    WindowsTextInput,
+    MacConfirmButton,
+    MacDeleteButton,
+    MacNumberInput,
+    MacTextInput
+)
+
+class WindowsFormFactory(AbstractFormFactory):
+    
+    @staticmethod
+    def get_confirm_button() -> UiButton:
+        return WindowsConfirmButton
+    
+    @staticmethod
+    def get_delete_button() -> UiButton:
+        return WindowsDeleteButton
+    
+    @staticmethod
+    def get_text_input() -> UiInput:
+        return WindowsTextInput
+
+    @staticmethod
+    def get_number_input() -> UiInput:
+        return WindowsNumberInput
+
+
+class MacFormFactory(AbstractFormFactory):
+    
+    @staticmethod
+    def get_confirm_button() -> UiButton:
+        return MacConfirmButton
+    
+    @staticmethod
+    def get_delete_button() -> UiButton:
+        return MacDeleteButton
+    
+    @staticmethod
+    def get_text_input() -> UiInput:
+        return MacTextInput
+
+    @staticmethod
+    def get_number_input() -> UiInput:
+        return MacNumberInput
+    
+```
 
 #### The Program
 
 1. Checks the OS which the code is running and returns the correct factory.
 2. Each of the UI components is stored on a variable.
 3. The Program calls the render methods of the UI components.
+
+```
+if __name__ == '__main__':
+    import platform
+    
+    # list the avalible concrete factories
+    form_factories = {
+        'Windows': WindowsFormFactory,
+        'MacOs': MacFormFactory
+    }
+    
+    # Gets the form_factory by the OS which the program is running 
+    form_factory = form_factories[platform.system()]
+    
+
+    confirm_button = form_factory.get_confirm_button()
+    delete_button = form_factory.get_delete_button()
+    
+    number_input = form_factory.get_number_input()
+    text_input = form_factory.get_text_input()
+    
+    confirm_button.render()
+    delete_button.render()
+    
+    text_input.render()
+    number_input.render()
+
+```
 
 ### Notes:
 
