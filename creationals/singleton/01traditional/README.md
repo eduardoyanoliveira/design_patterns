@@ -27,6 +27,19 @@ to be created.
 
 2. Use the  method __new__ to instantiate the class.Inside the method checks ff there is already an instance on the class variable, if so return this instance, else calls the method __new__ of the superclass to create a new instance.
 
+```
+class DatabaseConfig:
+    
+    _instance = None
+    
+    def __new__(cls, *args, **kwargs):
+        
+        if not cls._instance:
+            cls._instance = super().__new__(cls, *args, **kwargs)
+        return cls._instance
+
+```
+
 ### Obs
 
 1. This class can not inherit from other class.
@@ -40,6 +53,29 @@ to be created.
 3. Creates another instance of the class.
 4. Access the attributes passed to the db_config "first instance" in the last instance.
 5. The program is able to access all the attributes added to the first instance in the last one.
+
+```
+
+if __name__ == '__main__':
+    
+    # Creates a new Instance of DatabaseConfig
+    db_config = DatabaseConfig()
+    
+    # Adds some attributes to the instance
+    db_config.host = 'localhost:3000'
+    db_config.password = '@pwd123'
+    db_config.db_name = 'my_db'
+    db_config.user = 'super'
+    
+    # Creates a new Instance ofthe class
+    db_config_two = DatabaseConfig()
+    
+    # Tries to access attributes that have been seted on the first instance to be created on the second instance
+    print(db_config_two.user)
+    print(db_config.user)
+        
+
+```
 
 ##### Program Notes
 
