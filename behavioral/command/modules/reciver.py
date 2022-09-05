@@ -14,8 +14,8 @@ class Message:
 class User:
     name: str
     messages: Optional(List[Message]) =  field(default_factory=list)
-    followers : Optional(List[User]) =  field(default_factory=list)
-    followings: Optional(List[User]) =  field(default_factory=list)
+    followers : Optional(List[User]) =  field(default_factory=list) # users that follows this user 
+    followings: Optional(List[User]) =  field(default_factory=list) # users that this user follows
 
     def __str__(self) -> str:
         return self.name

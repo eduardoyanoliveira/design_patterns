@@ -12,7 +12,7 @@ if __name__ == '__main__':
     invoker = Invoker()
     
     invoker.execute(Follow(follower= yan, followed= duda))
-    # invoker.undo()
+    invoker.undo()
     
     invoker.execute( Batch ([
         Follow(follower=john, followed=yan),
