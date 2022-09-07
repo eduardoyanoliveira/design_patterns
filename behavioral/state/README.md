@@ -20,7 +20,7 @@ In order to create both the context and state a state interface is create to des
 
 ## Disadvantages
 
-1. The Context and State objects are circular related, and because of that. there is a increasing in coupling.
+1. The Context and State objects are circular related, and because of that. there is an increasing in coupling.
 
 ## Our Python example
 
