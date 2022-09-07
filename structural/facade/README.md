@@ -14,7 +14,7 @@ Analogous to a facade in architecture, a facade is an object that serves as a fr
 
 ## Disadvantages
 
-* Increase the code coheasion, because it's implementation are based on instance and not on interfaces.
+* Increase the code coupling, because it's implementation are based on instance and not on interfaces.
 
 * Breaks the open/closed principle
 
