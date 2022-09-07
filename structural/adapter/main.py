@@ -37,8 +37,8 @@ if __name__ == '__main__':
     print()
     
     # Using HashTokenAdapter
-    login_screen = LoginScreen(HashTokenAdapter)
+    login_screen_hash = LoginScreen(HashTokenAdapter)
     
-    login_screen.execute()
+    login_screen_hash.execute()
     print('####')
-    login_screen.execute()
+    login_screen_hash.execute()

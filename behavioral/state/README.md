@@ -24,6 +24,8 @@ In order to create both the context and state a state interface is create to des
 
 ## Our Python example
 
+### Obs: 
+
 * Python does not have interfaces, to workaround it.It's possible to use abstract classes or Protocols.This example uses Protocols. 
 
 ### Introduction
