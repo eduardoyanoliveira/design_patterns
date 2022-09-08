@@ -47,7 +47,7 @@ class ClientCode{
 ```
 ### Obs:
 
-* The Diagram is render by a third-part library and it can be a litle messed.
+* The Diagram is render by a third-part library and it can be a little messed.
 
 ## Our Python example
 
