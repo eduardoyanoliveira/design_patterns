@@ -24,7 +24,7 @@ IAbstractProduct <|-- ConcreteProductA : implements
 IAbstractProduct <|-- ConcreteProductB : implements
 SimpleFactory --|> ConcreteProductA : Instatiates
 SimpleFactory --|> ConcreteProductB : Instatiates
-ClientCode ..> SimpleFactory : Dependency
+ClientCode --* SimpleFactory : Dependency
 class IAbstractProduct
 <<interface>> IAbstractProduct
 IAbstractProduct : attributes
