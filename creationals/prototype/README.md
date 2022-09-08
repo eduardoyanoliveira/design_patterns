@@ -6,6 +6,23 @@
 
 The Prototype is a design pattern listed on the GOF book, like it's name says, it meant to provide a portotype (base) object of a class, with initial values setted to it's attributes. The client code will use this prototype object as a base to create a new object , only replacing the values of attributes that are necessary.
 
+## Pattern Diagram
+
+```mermaid
+classDiagram
+IPrototype <|-- ConcretePrototype : implements
+class IPrototype
+<<interface>> IPrototype
+IPrototype : +clone()
+class ConcretePrototype{
+    + attribute_one
+    + attribute_two
+    + clone()
+}
+
+
+```
+
 ## Our Python example
 
 ### Introduction
