@@ -16,6 +16,36 @@ Simple Factory is based on a estructure where an abstract class or interface, ca
 
 2. Make easier to add new concrete classes because the client code do not uses the implemantation of the abstract class, but only an instance.
 
+## Pattern Diagram
+
+```mermaid
+classDiagram
+IAbstractProduct <|-- ConcreteProductA : implements
+IAbstractProduct <|-- ConcreteProductB : implements
+SimpleFactory --|> ConcreteProductA : Instatiates
+SimpleFactory --|> ConcreteProductB : Instatiates
+ClientCode ..> SimpleFactory : Dependency
+class IAbstractProduct
+<<interface>> IAbstractProduct
+IAbstractProduct : attributes
+IAbstractProduct : methods()
+class ConcreteProductA{
+    attributes
+    methods()
+}
+class ConcreteProductB{
+    attributes
+    methods()
+}
+class SimpleFactory{
+    +create_product(product_type: str)
+}
+class ClientCode{
+    factory = SimpleFactory()
+    product = factory.create_product(product_type: str)
+}
+```
+
 ## Our Python example
 
 #### Base
@@ -58,7 +88,6 @@ class Spell(ABC):
         raise NotImplementedError()
 
 ```
-
 #### Concrete Classes
 
 3. Class Striker a spell that when is casted inflicts the power points of damage in the foe, and it can be multiplied by 1.5 if the foe is elemental. Class Flames  that has the power points multiplied by 3 if the foe is not elemental and divided by 2 if it's.
@@ -147,3 +176,8 @@ if __name__ == '__main__':
     print(elemental_foe)
 
 ```
+
+### Obs
+
+* This example uses static methods to make it simpler, but a real world code may uses objects.
+* The Diagram is render by a third-part library and it can be a litle messed.
