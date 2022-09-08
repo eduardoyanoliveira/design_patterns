@@ -10,6 +10,20 @@ Singleton design pattern is listed on the GOF book. It's main goal is to provide
 
 1. Prevents that a class' instance changes during runtime causing problems on specific parts of the code that still need the old values.
 
+## Pattern Diagram
+
+```mermaid
+classDiagram
+class Singleton{
+    - instance
+    - __init__()
+    +get_instance()
+}
+```
+
+### Obs:
+
+In this example there is no need to implements a get_instance method, because in python we can use the dunder method new.
 ## Our Python example
 
 #### Introduction
