@@ -45,6 +45,9 @@ class ClientCode{
     product = factory.create_product(product_type: str)
 }
 ```
+### Obs:
+
+* The Diagram is render by a third-part library and it can be a litle messed.
 
 ## Our Python example
 
@@ -180,4 +183,3 @@ if __name__ == '__main__':
 ### Obs
 
 * This example uses static methods to make it simpler, but a real world code may uses objects.
-* The Diagram is render by a third-part library and it can be a litle messed.
