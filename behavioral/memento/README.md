@@ -60,8 +60,8 @@ class Caretaker{
 IMemento <|-- ConcreteMemento : implements
 Originator *-- Caretaker : composition
 ConcreteMemento *-- Caretaker : composition
-ClientCode --> Originator : Uses
-ClientCode --> Caretaker : Uses
+ClientCode --> Originator : Association
+ClientCode --> Caretaker : Association
 
 ```
 
