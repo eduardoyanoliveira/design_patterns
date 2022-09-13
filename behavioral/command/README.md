@@ -42,10 +42,10 @@ class Reciver{
     methods()
 }
 ICommand <|-- ConcreteCommand : implements
-Invoker --* ConcreteCommand : composition
+Invoker o-- ConcreteCommand : Aggregation
 Reciver <-- ConcreteCommand : Association 
 ClientCode --> Reciver : Association
-ClientCode ..|> ConcreteCommand : Realization
+ClientCode ..> ConcreteCommand : Association
 
 ```
 ## Our Python example
