@@ -27,6 +27,34 @@ The Observer pattern is strongly used in event driven design, and it is also par
 
 2. Breaks the single responsibility principle if the class must implements the observable interface methods and it's own.(The Observable interface methods can be added on an abstract class to avoid this problem).
 
+## Pattern Diagram
+```mermaid
+classDiagram
+class IObserver
+<<interface>> IObserver
+IObserver : update()
+class IObservable
+<<interface>> IObservable
+IObservable : add_observer()
+IObservable : remove_observer()
+IObservable : notify_observers()
+class ConcreteObservable{
+    - observers : List[IObserver] 
+    + add_observer(observer: IObserver)
+    + remove_observer(observer: IObserver)
+    + notify_observers()
+}
+class ConcreteObserverA{
+    + update()
+}
+class ConcreteObserverB{
+    + update()
+}
+IObservable <|-- ConcreteObservable : implements
+IObserver <|-- ConcreteObserverA : implements
+IObserver <|-- ConcreteObserverB : implements
+ConcreteObservable o-- IObserver : Aggregation 
+```
 
 ## Our Python example
 
