@@ -45,7 +45,7 @@ ICommand <|-- ConcreteCommand : implements
 Invoker o-- ConcreteCommand : Aggregation
 Reciver <-- ConcreteCommand : Association 
 ClientCode --> Reciver : Association
-ClientCode ..> ConcreteCommand : Association
+ClientCode --> ConcreteCommand : Association
 
 ```
 ## Our Python example
