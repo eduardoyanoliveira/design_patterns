@@ -15,6 +15,39 @@ In order to fully implement this pattern the command class must to provide a met
 
 1. Add more complexity to the code.
 
+## Pattern Diagram
+```mermaid
+classDiagram
+class ICommand
+<<interface>> ICommand
+ICommand : execute()
+ICommand : undo()
+ICommand: redo()
+class ClientCode
+class Invoker{
+    undo_stack : List[ICommand] 
+    redo_stack : List[ICommand] 
+    + execute(command: ICommand)
+    + undo()
+    + redo()
+}
+class ConcreteCommand{
+    attributes
+    + execute()
+    + undo()
+    + redo()
+}
+class Reciver{
+    attributes
+    methods()
+}
+ICommand <|-- ConcreteCommand : implements
+Invoker *-- ConcreteCommand : composition
+Reciver <-- ConcreteCommand : Association 
+ClientCode --> Reciver : Association
+ClientCode ..|> ConcreteCommand : Realization
+
+```
 ## Our Python example
 
 #### Obs
