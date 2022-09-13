@@ -42,7 +42,7 @@ class Reciver{
     methods()
 }
 ICommand <|-- ConcreteCommand : implements
-Invoker *-- ConcreteCommand : composition
+Invoker --* ConcreteCommand : composition
 Reciver <-- ConcreteCommand : Association 
 ClientCode --> Reciver : Association
 ClientCode ..|> ConcreteCommand : Realization
