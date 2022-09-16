@@ -28,17 +28,17 @@
 ```mermaid
 classDiagram
     class Abstraction {
-        &lt;&lt;abstract&gt;&gt;
+        abstract
     }
-    RefinedAbstraction1 --|&gt; Abstraction
-    RefinedAbstraction2 --|&gt; Abstraction
+    RefinedAbstraction1 --|> Abstraction
+    RefinedAbstraction2 --|> Abstraction
     class Implementation {
-        &lt;&lt;abstract&gt;&gt;
+        abstract
         +implementation()
     }
     Abstraction o-- Implementation : uses
-    Implementation &lt;|-- ConcreteImplementation1
-    Implementation &lt;|-- ConcreteImplementation2
+    Implementation <|-- ConcreteImplementation1
+    Implementation <|-- ConcreteImplementation2
     ConcreteImplementation1: +implementation()
     ConcreteImplementation2: +implementation()
 
