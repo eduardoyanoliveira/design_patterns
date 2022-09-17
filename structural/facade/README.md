@@ -20,6 +20,30 @@ Analogous to a facade in architecture, a facade is an object that serves as a fr
 
 * Breaks the Dependency principle
 
+## Pattern Diagram
+```mermaid
+classDiagram
+    class ClassA {
+        method()
+    }
+    class ClassB {
+        method()
+    }
+    class ClassC {
+        method()
+    }
+    class Facade {
+        class_a.method()
+        class_b.method()
+        class_c.mehtod()
+    }
+   
+    Facade --> ClassA
+    Facade --> ClassB
+    Facade --> ClassC
+
+```
+
 ## Our Python example
 
 ### Introduction
