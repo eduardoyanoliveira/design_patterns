@@ -22,6 +22,27 @@ In order to create both the context and state a state interface is create to des
 
 1. The Context and State objects are circular related, and because of that. there is an increasing in coupling.
 
+## Pattern Diagram
+```mermaid
+classDiagram
+    class Context {
+        +request()
+    }
+    class AbstractState {
+        +handle()
+    }
+    class ConcreteA {
+        +handle()
+    }
+    class ConcreteB {
+        +handle()
+    }
+
+    Context --* AbstractState 
+    AbstractState --|> ConcreteA
+    AbstractState --|> ConcreteB
+
+```
 ## Our Python example
 
 ### Obs: 
