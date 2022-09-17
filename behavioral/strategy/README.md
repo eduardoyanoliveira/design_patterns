@@ -17,6 +17,30 @@ The strategy pattern (also known as the policy pattern) is a behavioral software
 
 4. Uses Dependency injection, providing less code coupling. 
 
+## Pattern Diagram
+```mermaid
+classDiagram
+    class Context {
+    }
+    class StrategyInterface {
+        + algorithm_interface()
+    }
+    class StrategyA {
+        + algorithm_implementation_a()
+    }
+    class StrategyB {
+        + algorithm_implementation_b()
+    }
+    class StrategyC{
+        + algorithm_implementation_c()
+    }
+
+    Context --* StrategyInterface : uses
+    StrategyInterface --|> StrategyA
+    StrategyInterface --|> StrategyB
+    StrategyInterface --|> StrategyC
+```
+
 ## Our Python example
 
 #### Obs
