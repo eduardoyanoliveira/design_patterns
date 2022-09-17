@@ -22,9 +22,10 @@ The strategy pattern (also known as the policy pattern) is a behavioral software
 classDiagram
     class Context {
     }
-    class StrategyInterface {
-        + algorithm_interface()
-    }
+
+    class StrategyInterface 
+    <<interface>> StrategyInterface
+      StrategyInterface :  + algorithm_interface()
     class StrategyA {
         + algorithm_implementation_a()
     }

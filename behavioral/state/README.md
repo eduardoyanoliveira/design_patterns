@@ -28,9 +28,10 @@ classDiagram
     class Context {
         +request()
     }
-    class AbstractState {
-        +handle()
-    }
+    class AbstractState 
+    <<interface>> AbstractState
+    AbstractState : + handle()
+    
     class ConcreteA {
         +handle()
     }
