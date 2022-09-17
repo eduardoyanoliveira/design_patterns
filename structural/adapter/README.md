@@ -25,6 +25,23 @@ The Adapter class implements a Target interface that is compatible with the clie
 
 * The class adapter pattern (with inheritance) may generate a Dimond Problem,
 
+## Pattern Diagram
+```mermaid
+classDiagram
+    class Target {
+        +request()
+    }
+    class Adapter {
+        +request()
+    }
+    class Adaptee {
+        +specific_request()
+    }
+   
+    Target ..|> Adapter
+    Adapter --> Adaptee
+
+```
 ## Our Python example
 
 ### Obs: 
