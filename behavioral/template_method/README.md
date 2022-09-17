@@ -18,6 +18,28 @@ The helper methods may be either abstract methods, in which case subclasses are 
 
 1. Add more complexity to the code.
 
+```mermaid
+classDiagram
+    class AbstractClass{
+        + template_method()
+        + step_one()
+        + step_two()
+        + step_three()
+    }
+    class ConcreteClassA{
+        + step_one()
+        + step_two()
+        + step_three()
+    }
+    class ConcreteClassB{
+        + step_one()
+        + step_two()
+        + step_three()
+    }
+    AbstractClass <|-- ConcreteClassA
+    AbstractClass <|-- ConcreteClassB
+```
+
 ## Our Python example
 
 
