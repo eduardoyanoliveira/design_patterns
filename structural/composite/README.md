@@ -66,7 +66,7 @@ classDiagram
 
 1. Create an abstract class with the common methods to be implemented by both the Leaf class and the Composite class. (component.py)
 
-```
+```py
 from abc import ABC
 
 class ProductComponent(ABC):
@@ -80,7 +80,7 @@ class ProductComponent(ABC):
 
 2. Create a class that will represent a non-compound product.(leaf.py)
 
-```
+```py
 from dataclasses import dataclass
 from modules.component import ProductComponent
 
@@ -99,7 +99,7 @@ class ProductLeaf(ProductComponent):
 
 3. Create the Composite class. (composite.py)
 
-```
+```py
 from dataclasses import dataclass, field
 from functools import reduce
 from modules.component import ProductComponent
@@ -132,7 +132,7 @@ class ProductComposite(ProductComponent):
 4. Call the get_quantity method of the first composite instance that returns the sum of all products' quantity. 
 
 
-```
+```py
 from modules.leaf import ProductLeaf
 from modules.composite import ProductComposite
 
