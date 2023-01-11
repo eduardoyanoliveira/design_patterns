@@ -53,7 +53,7 @@ The program is an order sysyem where the order total is calculated in different 
 1. Create a template class that has the abstract methods calc_fee, calc_discount and has a final method calc_total that use the to abstract methods to calculate the order total.
 The class needs to recive the average price per product on the order; the product amount; and the distance to the customer's house.
 
-```
+```py
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
@@ -86,7 +86,7 @@ class OrderTemplate(ABC):
 
 2. Create a class Ecommerce Order that inherits from the Order Template and calcs the fee based on the product amount and applies always 1 per cent of discount
 
-```
+```py
 @dataclass
 class EcommerceOrder(OrderTemplate):
     
@@ -110,7 +110,7 @@ class EcommerceOrder(OrderTemplate):
 3. Create a class Store Order that inherits from the Order Template and adds 10 cents of fee by KM of distance to the destination and applies discount by the product amount.
 
 
-```
+```py
 @dataclass
 class StoreOrder(OrderTemplate):
     
@@ -133,7 +133,7 @@ class StoreOrder(OrderTemplate):
 1. Instantiate two orders, on from Ecommerce and other from Store.
 2. Prints the total of each order.
 
-```
+```py
 if __name__ == '__main__':
     
     ecommerce_order = EcommerceOrder(12, 25, 500, 'Beth')
