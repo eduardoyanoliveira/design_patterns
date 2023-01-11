@@ -57,7 +57,7 @@ The program simulates the relationship between a wearable divice and a an applic
 
 1. Create the Implementor for the Weareable divice. (implementor.py) 
 
-```
+```py
 from typing import List, Protocol
 
 
@@ -74,7 +74,7 @@ class WearableDeviceImplementor(Protocol):
 
 2. These classes are the normal classes that the program would have before the implementation of the pattern. They are the business logic classes and each will have a concrete_implementor that will manipulate the program class to make it match the abstraction. (program_classes.py)
 
-```
+```py
 from dataclasses import dataclass, field
 from typing import List
 
@@ -100,7 +100,7 @@ class SmartWatch:
 
 3. Create the concrete implementors for each program class.( concrete_implementors.py )
 
-```
+```py
 from typing import List
 from modules.program_classes import SmartBand, SmartWatch
 from dataclasses import dataclass
@@ -136,7 +136,7 @@ class SmartWatchImplementor:
 
 4. The Abstraction consumes one concrete implementor. In this case, the abstraction represents a Display screen of an application that cosumes the data from the wearable device and prints a report.
 
-```
+```py
 from abc import ABC
 from dataclasses import dataclass
 from modules.implementor import WearableDeviceImplementor
@@ -154,7 +154,7 @@ class DisplayScreenAbstraction(ABC):
 
 5. In order to examplify that the Bridge pattern can wor with multiple implementations of both the abstraction and the implementor, here is created two classes that inherits from the abstraction. One represetns a mobile display screen and other a desktop display screen, and each provides a different report.
 
-```
+```py
 from dataclasses import dataclass
 from modules.abstraction import DisplayScreenAbstraction
 
@@ -203,7 +203,7 @@ It is possible to interchange the abstractions instances and the concrete implem
 The SmartBand device can be display on the desktop display and the SmartWatch on the app display.
 
 
-```
+```py
 from modules.program_classes import SmartBand, SmartWatch
 from modules.concrete_implementors import SmartBandImplementor, SmartWatchImplementor
 from modules.refined_abstractions import AppDisplayScreen, DesktopDisplayScreen
