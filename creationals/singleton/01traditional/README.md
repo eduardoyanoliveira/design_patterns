@@ -36,7 +36,7 @@ to be created.
 
 1. On the singleton class create a class varible will be responsible store the instance and if an instance is already stored on this varible the class can not allow another one to be created. 
 
-```
+```py
 class DatabaseConfig:
     
     _instance = None
@@ -47,7 +47,7 @@ class DatabaseConfig:
 
 2. Use the  method __new__ to instantiate the class.Inside the method checks ff there is already an instance on the class variable, if so return this instance, else calls the method __new__ of the superclass to create a new instance.
 
-```
+```py
 class DatabaseConfig:
     
     _instance = None
@@ -74,7 +74,7 @@ class DatabaseConfig:
 4. Access the attributes passed to the db_config "first instance" in the last instance.
 5. The program is able to access all the attributes added to the first instance in the last one.
 
-```
+```py
 
 if __name__ == '__main__':
     
