@@ -63,7 +63,7 @@ The program simulates an invoice system where the invoice can be emitted or canc
 
 1. Create the protocol that every concrete class will follow. (state_protocol.py)
 
-```
+```py
 from typing import Protocol
 
 
@@ -84,7 +84,7 @@ class IInvoiceState(Protocol):
 
 2. Create an abstract context class in order to avoid circular imports on python files.  (abstract_context.py)
 
-```
+```py
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -112,7 +112,7 @@ class AbstractInvoice(ABC):
 
 3. Create the context that will inhiret from the abstract context and delegate the methods to the state classes.
 
-```
+```py
 from dataclasses import dataclass
 from modules.abstract_context import AbstractInvoice
 from modules.states import PendingState
@@ -144,7 +144,7 @@ class Invoice(AbstractInvoice):
 
 4. Create a file with every state that the context needs. (states.py)
 
-```
+```py
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -211,7 +211,7 @@ class EmitState:
 3. Cancel the invoice.
 
 
-```
+```py
 from modules.context import Invoice
 
     
