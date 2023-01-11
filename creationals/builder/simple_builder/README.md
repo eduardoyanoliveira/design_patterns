@@ -36,7 +36,7 @@ The program is a FPS game that let the player craft guns combining diferent part
 
 1. Create a dataclass for the gun that contains all the possible gun's parts.
 
-```
+```py
 
 @dataclass
 class Gun:
@@ -55,7 +55,7 @@ class Gun:
 
 2. Create a dataclass that will be the gun's "Builder Class".
 
-```
+```py
 @dataclass
 class GunBuilder(Gun):
     pass
@@ -67,7 +67,7 @@ class GunBuilder(Gun):
 3. For each part that can be added to the gun, creates a method that will add it to the "Builder Class" instance. 
 (In this case I'm only passing "true" to the parts that together creates the gun). Return the instance (self).
 
-```
+```py
 @dataclass
 class GunBuilder(Gun):
     
@@ -99,7 +99,7 @@ class GunBuilder(Gun):
 
 4. Create a build method that instatiate a new Gun passing the "Builder Class" instance attributes as the parameters to create it. Return the gun instance.
 
-```
+```py
 @dataclass
 class GunBuilder(Gun):
     
@@ -123,7 +123,7 @@ class GunBuilder(Gun):
 2. Creates a Glock with infrared sight using the "Builder Class" and stores it on a variable
 3. Prints both variables on console.
 
-```
+```py
 if __name__ == '__main__':
     ak = GunBuilder('Ak-74').with_scope().with_silincer().build()
     glock = GunBuilder('Glock').with_infrared_sight().build()
