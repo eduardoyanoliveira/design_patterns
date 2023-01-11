@@ -33,7 +33,7 @@ The program is an Employee register that provides a class role and a class emplo
 
 1. Create a class Role with the attribute name.
 
-```
+```py
 @dataclass 
 class Role:
     name : str
@@ -52,7 +52,7 @@ class Role:
 *  role: Role
 *  month_bonus: float
 
-```
+```py
 @dataclass
 class Employee:
     
@@ -77,6 +77,7 @@ class Employee:
 
 3. To implement the prototype pattern it's need to create a clone method on the product class "Employee".The clone method must clone the instance "self" and return the clone.
 
+```py
 @dataclass
 class Employee:
     
@@ -94,7 +95,7 @@ class Employee:
 2. Clones the prototype to craete an actually employee "john" and changes the attribute "name" to "John".
 3. Does the exactly same thing to another employee that works on the office "Mary".
 
-```
+```py
 if __name__ == '__main__':
     
     adm = Role('Administrative Assistant')
