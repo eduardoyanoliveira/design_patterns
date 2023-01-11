@@ -57,7 +57,7 @@ The code is a part of a RPG game, where each warrior can use differents strategi
 1. Create the abstract classes on the "interfaces" file with an attack abstract class and a defense abstract class.
 Each has a static method called execute that does the action reciving either strength_points or defense_points.
 
-```
+```py
 class IAttackStrategy(ABC):
     
     @staticmethod
@@ -83,7 +83,7 @@ class IDefenseStrategy(ABC):
 * ArmsDefenseStrategy implements IDefenseStrategy interface.
 * ShieldDefenseStrategy implements IDefenseStrategy interface.
 
-```
+```py
 class EmptyHandedAttackStrategy(IAttackStrategy):
     
     @staticmethod
@@ -131,7 +131,7 @@ methods:
 * attack => uses the reciving implementation of the IAttackStrategy interface to attack passing the strength_points.
 * defense => uses the reciving implementation of the IDefenseStrategy interface to defend passing the defense_points.
 
-```
+```py
 @dataclass
 class Warrior:
     
@@ -155,7 +155,7 @@ class Warrior:
 2. Instantiate a royal_warrior that recives the SwordAttackStrategy and the ShieldDefenseStrategy.
 3. Execute the functions attack and defend for both warriors
 
-```
+```py
 
 if __name__ == '__main__':
     
