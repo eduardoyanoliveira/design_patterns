@@ -79,7 +79,7 @@ The program uses the originator class as a beast, where the client code can crea
 
 1. Create the Memento Protocol. (memento.py) 
 
-```
+```py
 from datetime import datetime
 from typing import Protocol
 
@@ -96,7 +96,7 @@ class IMemento(Protocol):
 
 2. Create the concrete memento class for the specif originator. (concrete_memento.py)
 
-```
+```py
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -126,7 +126,7 @@ class BeastMemento:
 
 3. Creates the Beast class that will act as an originator. This class must has an attribute state with the current transformation of the beast.(originator.py)
 
-```
+```py
 from dataclasses import dataclass
 from datetime import datetime
 import uuid
@@ -163,7 +163,7 @@ class Beast:
 
 4. Create the caretaker class.(caretaker.py)
 
-```
+```py
 from dataclasses import dataclass, field
 from typing import List
 
@@ -207,7 +207,7 @@ class BeastCaretaker:
     * Wolf to Warewolf.
 4. Uses the caretaker to undo the last transformation, turning the Warewolf back into a wolf.
 
-```
+```py
 from modules.originator import Beast
 from modules.caretaker import  BeastCaretaker
 
