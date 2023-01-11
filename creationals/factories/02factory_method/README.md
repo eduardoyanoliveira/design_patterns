@@ -33,7 +33,7 @@ There is only a small problem here. By the company policies eachcountry has a ce
 
 1. Creates the discount abstract class.
 
-```
+```py
 # Abstract Class
 class Discount(ABC):
     
@@ -49,7 +49,7 @@ class Discount(ABC):
 
     1. ValueDiscount
 
-    ```
+    ```py
     class ValueDiscount(Discount):
     
     
@@ -68,7 +68,7 @@ class Discount(ABC):
 
     2. ProgressiveValueDiscount
 
-    ```
+    ```py
     class ProgressiveValueDiscount(Discount):
     
     
@@ -110,7 +110,7 @@ class Discount(ABC):
 
     3. PercentageDiscount
 
-    ```
+    ```py
     class PercentageDiscount(Discount):
 
 
@@ -133,7 +133,7 @@ class Discount(ABC):
 
 3. Creates the abstract factory class with a get_discount abstract method and a list_discount methods.
 
-```
+```py
 class DiscountBaseFactory(ABC):
     
     def __init__(self, discount_types : dict) -> None:
@@ -155,7 +155,7 @@ class DiscountBaseFactory(ABC):
 
 4. Creates two different implementations of the factory class, one with the Brazilian discount types and another for the american ones.  
 
-```
+```py
 class BrazilianDiscountFactory(DiscountBaseFactory):
     
     def __init__(self) -> None:
@@ -188,7 +188,7 @@ class AmericanDiscountFactory(DiscountBaseFactory):
 3. Anounces the promotion and asks the customer to choose the type of discount. Listing only the available discounts for the customer's location.
 4. Applies the choosen discount to the customer's order.
 
-```
+```py
 if __name__ == '__main__':
     
     
