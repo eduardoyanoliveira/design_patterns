@@ -59,7 +59,7 @@ a is_active flag that needs to be False if the employee has been resignated.
 a resignated date that will be fufilled at the resignation time.<br>
 The other employees attributes are not key factor for the facade example.
 
-```
+```py
 from dataclasses import dataclass
 from datetime import datetime as date
 
@@ -91,7 +91,7 @@ A list of all files urls that are saved on server as a class variable. <br>
 A add_file class method that will add a file to the list and return the url generated.<br>
 A remove_file class method.<br>
 
-```
+```py
 from dataclasses import dataclass
 from typing import ClassVar, List
 
@@ -123,7 +123,7 @@ class FileStorage:
 
 3. This class acts like a database repository that will storage all the employees.It follows the same logic as the File Storage class.
 
-```
+```py
 from dataclasses import dataclass
 from typing import ClassVar, List
 from modules.Employee import Employee
@@ -154,7 +154,7 @@ The Employee Facade encapsulates all the necessary logic to register or resignat
 
 When a new employee is register,he/she must has the photo uploaded to the server and be register on database.At mean while when he/she is resignated, the photo has to be deleted from server, the register removed from database and the resignation_date must be setted
 
-```
+```py
 from dataclasses import dataclass
 from datetime import datetime
 from modules.Employee import Employee
@@ -189,7 +189,7 @@ class EmployeeFacade:
 2. Uses the Facade to register the employee.
 3. Uses the Facade to resignate the employee.
 
-```
+```py
 from modules.Employee import Employee
 from modules.EmployeeFacade import EmployeeFacade
 
