@@ -63,7 +63,7 @@ The program simulates a message sent as request by the user.In this program the 
 
 1. Create the abstract handler class to the specif request. (abstract_handler.py)
 
-```
+```py
 from __future__ import annotations
 from abc import ABC
 from dataclasses import dataclass, field
@@ -89,7 +89,7 @@ class AbstractAccessHandler(ABC):
 
 2. Create all the handlers subclasses to treat the request. (handlers.py)
 
-```
+```py
 from modules.abstract_handler import AbstractAccessHandler
 from modules.program_classes import UserMessageRequest, Role
 
@@ -132,7 +132,7 @@ class MessageAccessHandler(AbstractAccessHandler):
 
 3. The program classes are the classes used in the request.(program_classes.py)
 
-```
+```py
 from dataclasses import dataclass, field
 from enum import Enum
 
@@ -172,7 +172,7 @@ class UserMessageRequest:
 5. The program displays the user message, because the request successfully passed by all the hanlders.
 
 
-```
+```py
 import uuid
 from modules.handlers import ( 
     MessageAccessHandler, 
