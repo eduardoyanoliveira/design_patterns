@@ -63,7 +63,7 @@ The program simulates a social network where an user can follow other users and 
 
 1. Create the protocol that every command must follows. The command must has an execute method, a undo method to undo the command, and a redo method that can be used in a command that has been undone. (command_protocol.py) 
 
-```
+```py
 from dataclasses import dataclass
 from typing import Protocol
 
@@ -84,7 +84,7 @@ class ICommand(Protocol):
 
 2. Create a class to control a command batch. (batch.py)
 
-```
+```py
 from dataclasses import dataclass, field
 from modules.command_protocol import ICommand
 
@@ -118,7 +118,7 @@ class Batch:
 
 3. Create the invoker class that will be responsible to execute the commands.(invoker.py)
 
-```
+```py
 from dataclasses import dataclass, field
 from typing import List
 
@@ -156,7 +156,7 @@ class Invoker:
 
 Create a file with every command that the program needs. (commands.py)
 
-```
+```py
 from dataclasses import dataclass
 from modules.reciver import User, Message
 
@@ -202,7 +202,7 @@ class SendMessage:
 
 Create the class that will recive or be effect by a command. (reciver.py)
 
-```
+```py
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional, List
@@ -241,7 +241,7 @@ class User:
 * The program shows that john follows yan.
 * The program shows the message that john sent to yan.
 
-```
+```py
 from modules.commands import SendMessage
 from modules.batch import Batch
 from modules.invoker import Invoker
