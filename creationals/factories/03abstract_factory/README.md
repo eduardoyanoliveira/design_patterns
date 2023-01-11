@@ -33,7 +33,7 @@ After hours of thinking about the problem you decide to ask a collegue,she says 
 1. Transform the current factory class into an abstract factory class which will hava an abstract method to get each UI component. \
     e.g: get_confirm_button, get_delete_button, etc.  
 
-```
+```py
 from abstract_product_classes import UiButton, UiInput
 
 # Abstract Factory
@@ -67,7 +67,7 @@ class AbstractFormFactory(ABC):
 2. Creates an implemantation of the abstract factory class for each Windows and Mac. Each of the factory will return the right implementation of the abstract product class.\
     e.g: If the get_confirm_button from the Windows Factory is called, it returns a Windows Confirm Button.
 
-```
+```py
 from concrete_product_classes import (
     WindowsConfirmButton,
     WindowsDeleteButton,
@@ -124,7 +124,7 @@ class MacFormFactory(AbstractFormFactory):
 2. Each of the UI components is stored on a variable.
 3. The Program calls the render methods of the UI components.
 
-```
+```py
 if __name__ == '__main__':
     import platform
     
