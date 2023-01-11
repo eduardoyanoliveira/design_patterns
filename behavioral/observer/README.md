@@ -74,7 +74,7 @@ A rocket is about to be launched into a new space mission. As it is a really imp
 
 1. Create the abstract classes on the "interfaces" file. 
 
-```
+```py
 class IObserver(ABC):
     @abstractmethod
     def update(self) -> None: pass
@@ -98,7 +98,7 @@ class IObservable(ABC):
 
 2. Create a rocket ship class that implements the IObservable interface and has a boolean attribute to hold the information if the rocket has been launched.
 
-```
+```py
 class RocketShip(IObservable):
 
     def __init__(self, name) -> None:
@@ -142,7 +142,7 @@ class RocketShip(IObservable):
 
 3. Create a class NasaScientist and one Reporter, both of them implement the IObserver interface:
 
-```
+```py
 @dataclass
 class NasaScientist(IObserver):
     
@@ -178,7 +178,7 @@ class NewsReporter(IObserver):
 3. Sets the attribute has_launched on the rocket to True.
 4. When the attribute has_lauched change, it notifies all of the subscribers and each reacts with a different behavior.
 
-```
+```py
 if __name__ == '__main__':
     
     rocket = RocketShip('kepler')
