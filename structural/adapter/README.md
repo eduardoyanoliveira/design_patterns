@@ -57,7 +57,7 @@ The Client code (LoginScreen class) is already using an interface compatible wit
 
 1. Creates a target interface. (target_protocol.py)
 
-```
+```py
 from typing import Protocol
 
 class ITokenService(Protocol):
@@ -74,7 +74,7 @@ class ITokenService(Protocol):
 
 (hash_token.py)
 
-```
+```py
 from dataclasses import dataclass
 from typing import ClassVar, List
 import random
@@ -109,7 +109,7 @@ class HashToken:
 
 (jwt.py)
 
-```
+```py
 from dataclasses import dataclass
 from typing import ClassVar, List
 import uuid
@@ -145,7 +145,7 @@ class JwtToken:
 
 3. Creates an adapter class that adapts the HashToken to the JWT format, because the client code is already using the JWT format.(adapter.py)
 
-```
+```py
 from dataclasses import dataclass
 from modules.hash_token import HashToken
 
@@ -169,7 +169,7 @@ class HashTokenAdapter:
 
 (main.py)
 
-```
+```py
 from dataclasses import dataclass
 from modules.jwt import JwtToken
 from modules.target_protocol import ITokenService
